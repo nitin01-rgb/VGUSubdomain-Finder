@@ -56,12 +56,12 @@ def home():
 
 @app.get("/<path:filename>")
 def frontend_files(filename):
-
     allowed_files = {
-        "style.css",
-        "script.js",
-        "logo.png"
-    }
+    "style.css",
+    "script.js",
+    "logo.png",
+    "google8be1bb66f6a79d8d.html"
+}
 
     if filename in allowed_files:
         return send_from_directory(
