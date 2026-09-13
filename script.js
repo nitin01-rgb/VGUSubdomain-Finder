@@ -156,7 +156,11 @@ async function scanSubdomains() {
             `Found ${subdomains.length} subdomain(s) for ${domain}.`;
              
       saveScanHistory("Subdomain Finder", domain);
-
+   document
+    .querySelector(".results-section")
+    .scrollIntoView({
+        behavior: "smooth"
+    });
     }
 
     catch (error) {
