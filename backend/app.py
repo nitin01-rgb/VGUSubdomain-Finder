@@ -60,7 +60,8 @@ def frontend_files(filename):
     "style.css",
     "script.js",
     "logo.png",
-    "google8be1bb66f6a79d8d.html"
+    "google8be1bb66f6a79d8d.html",
+    "sitemap.xml"
 }
 
     if filename in allowed_files:
