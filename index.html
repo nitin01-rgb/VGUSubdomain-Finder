@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VGUSubdomain Finder</title>
+
+    <meta name="description"
+          content="VGUSubdomain Finder - Discover subdomains, DNS records, certificates and more.">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <div class="brand">
+            <img src="logo.png" alt="VGU Logo">
+            <div class="brand-text">
+                <span class="vgu-red">VGU</span><span>Subdomain Finder</span>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#home" class="active">Home</a>
+            <a href="#tools">Tools</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+    <main id="home">
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="small-heading">
+                    RECON &nbsp;•&nbsp; DISCOVER &nbsp;•&nbsp; EXPLORE
+                </div>
+
+                <h1>
+                    <span>VGU</span>Subdomain Finder
+                </h1>
+
+                <p class="hero-subtitle">
+                    Find subdomains, gather DNS records, analyze certificates
+                    and explore domain information — all in one place.
+                </p>
+
+                <div class="search-box">
+
+                    <span class="search-icon">🌐</span>
+
+                    <input
+                        id="domainInput"
+                        type="text"
+                        placeholder="Enter domain (e.g. vgu.ac.in)"
+                        autocomplete="off"
+                    >
+
+                    <button id="scanButton">
+                        🔍 Scan
+                    </button>
+
+                </div>
+
+                <div id="resultMessage" class="result-message">
+                    Enter a domain to begin.
+                </div>
+
+            </div>
+
+
+            <!-- LOGO AREA -->
+            <div class="hero-logo">
+
+                <div class="logo-glow"></div>
+
+                <img
+                    src="logo.png"
+                    alt="Vivekananda Global University"
+                >
+
+            </div>
+
+        </section>
+
+
+        <!-- RESULTS -->
+        <section class="results-section">
+
+            <div class="results-header">
+
+                <div>
+                    <h2>Scan Results</h2>
+                    <p>Discovered information will appear here.</p>
+                </div>
+
+                <div class="stats">
+
+                    <div class="stat-box">
+                        <strong id="totalCount">0</strong>
+                        <span>Total</span>
+                    </div>
+
+                    <div class="stat-box">
+                        <strong id="liveCount">0</strong>
+                        <span>Live</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Domain / Record</th>
+                            <th>Status</th>
+                            <th>Details</th>
+                            <th>Source</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="resultsBody">
+
+                        <tr>
+                            <td colspan="4" class="empty">
+                                No results yet. Enter a domain above.
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- TOOLS -->
+        <section id="tools" class="tools-section">
+
+            <div class="section-title">
+                <span></span>
+                <h2>Important Tools</h2>
+                <span></span>
+            </div>
+
+
+            <div class="tools-grid">
+
+
+                <!-- TOOL 1 -->
+                <div class="tool-card">
+
+                    <div class="tool-icon red">⌕</div>
+
+                    <div>
+                        <h3>Subdomain Finder</h3>
+
+                        <p>
+                            Discover subdomains using passive
+                            Certificate Transparency sources.
+                        </p>
+
+                        <button id="subdomainToolButton">
+                            Open Tool →
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <!-- TOOL 2 -->
+                <div class="tool-card">
+
+                    <div class="tool-icon blue">◉</div>
+
+                    <div>
+                        <h3>DNS Lookup</h3>
+
+                        <p>
+                            Check A, AAAA, MX, NS, TXT
+                            and other DNS records.
+                        </p>
+
+                        <button id="dnsButton">
+                            Lookup DNS →
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <!-- TOOL 3 -->
+                <div class="tool-card">
+
+                    <div class="tool-icon green">✓</div>
+
+                    <div>
+                        <h3>Certificate Lookup</h3>
+
+                        <p>
+                            Inspect SSL/TLS certificates
+                            and transparency records.
+                        </p>
+
+                        <button id="certificateButton">
+                            Lookup Certificates →
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <!-- TOOL 4 -->
+                <div class="tool-card">
+
+                    <div class="tool-icon purple">&lt;/&gt;</div>
+
+                    <div>
+                        <h3>HTTP Checker</h3>
+
+                        <p>
+                            Check HTTP status information
+                            and response details.
+                        </p>
+
+                        <button id="httpButton">
+                            Check HTTP →
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <!-- TOOL 5 -->
+                <div class="tool-card">
+
+                    <div class="tool-icon cyan">⌖</div>
+
+                    <div>
+                        <h3>IP / Host Lookup</h3>
+
+                        <p>
+                            Find IP and basic host
+                            information.
+                        </p>
+
+                        <button id="ipButton">
+                            Lookup Host →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TOOL 6 -->
+                <div class="tool-card">
+
+                    <div class="tool-icon orange">◎</div>
+
+                    <div>
+                        <h3>WHOIS Lookup</h3>
+
+                        <p>
+                            View domain registration
+                            and ownership information.
+                        </p>
+
+                        <button id="whoisButton">
+                            Lookup WHOIS →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TOOL 7 -->
+                <div class="tool-card">
+
+                    <div class="tool-icon pink">↗</div>
+
+                    <div>
+                        <h3>URL / Domain Parser</h3>
+
+                        <p>
+                            Extract domains, paths,
+                            parameters and URL details.
+                        </p>
+
+                        <button id="parserButton">
+                            Parse URL →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TOOL 8 -->
+                <div class="tool-card">
+
+                    <div class="tool-icon teal">▥</div>
+
+                    <div>
+                        <h3>Technology Detection</h3>
+
+                        <p>
+                            Identify basic web technologies
+                            and server information.
+                        </p>
+
+                        <button id="techButton">
+                            Detect Tech →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TOOL 9 -->
+                <div class="tool-card">
+
+                    <div class="tool-icon yellow">⇩</div>
+
+                    <div>
+                        <h3>Export Results</h3>
+
+                        <p>
+                            Export scan results in
+                            CSV or JSON format.
+                        </p>
+
+                        <button id="exportButton">
+                            Export →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TOOL 10 -->
+                <div class="tool-card">
+
+                    <div class="tool-icon violet">◷</div>
+
+                    <div>
+                        <h3>Scan History</h3>
+
+                        <p>
+                            View previous scans and
+                            saved results.
+                        </p>
+
+                        <button id="historyButton">
+                            View History →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT -->
+        <section id="about" class="about-section">
+
+            <div class="section-title">
+                <span></span>
+                <h2>About VGUSubdomain Finder</h2>
+                <span></span>
+            </div>
+
+            <div class="about-card">
+
+                <h3>Learn • Explore • Build a Safer Tomorrow</h3>
+
+                <p>
+                    VGUSubdomain Finder is a reconnaissance and
+                    domain-information platform designed for
+                    learning, authorized security research and
+                    responsible security testing.
+                </p>
+
+                <p>
+                    The platform brings useful passive
+                    reconnaissance tools together in one place.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer id="contact">
+
+        <div class="footer-brand">
+
+            <img src="logo.png" alt="VGU Logo">
+
+            <div>
+                <strong>
+                    <span>VGU</span>Subdomain Finder
+                </strong>
+
+                <small>
+                    Created & Developed by Nitin Kumar
+                </small>
+            </div>
+
+        </div>
+
+
+        <div class="footer-center">
+            Learn &nbsp; | &nbsp;
+            Explore &nbsp; | &nbsp;
+            Build a Safer Tomorrow
+        </div>
+
+
+        <div class="footer-student">
+
+            <strong>Nitin Kumar</strong>
+
+            <span>
+                B.Tech (Sunstone) Student
+            </span>
+
+            <span>
+                Vivekananda Global University
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
